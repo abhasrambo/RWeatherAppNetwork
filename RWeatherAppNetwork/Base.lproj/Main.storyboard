@@ -18,9 +18,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-sJ-vgG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-yn-isK">
-                                <rect key="frame" x="0.0" y="64" width="453" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <searchBar contentMode="redraw" placeholder="Enter City Name" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-yn-isK">
+                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-bR-0SM">
                                 <rect key="frame" x="0.0" y="180" width="414" height="610"/>
@@ -31,22 +35,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12x-O1-cDx">
+                                <rect key="frame" x="0.0" y="125" width="414" height="86"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="12x-O1-cDx" secondAttribute="height" multiplier="217:45" id="S6T-8A-Spk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Search" image="magnifyingglass.circle.fill" catalog="system" backgroundImage="Screen Shot 2020-06-26 at 2.03.43 PM">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dP0-vW-0LJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Ama-sJ-vgG" secondAttribute="bottom" id="2aF-fa-Kvy"/>
                             <constraint firstItem="hPn-bR-0SM" firstAttribute="top" secondItem="VvZ-yn-isK" secondAttribute="bottom" constant="60" id="3Bg-36-XLi"/>
                             <constraint firstItem="hPn-bR-0SM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Gc-BT-31d"/>
+                            <constraint firstItem="12x-O1-cDx" firstAttribute="top" secondItem="VvZ-yn-isK" secondAttribute="bottom" constant="5" id="4PV-BD-8nj"/>
                             <constraint firstItem="hPn-bR-0SM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4kp-Hd-ksy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="12x-O1-cDx" secondAttribute="trailing" id="7gj-Is-dnN"/>
                             <constraint firstItem="Ama-sJ-vgG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8x2-tv-cX0"/>
                             <constraint firstItem="Ama-sJ-vgG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="B7n-WA-mxO"/>
                             <constraint firstItem="Ama-sJ-vgG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FcU-WA-STJ"/>
                             <constraint firstItem="VvZ-yn-isK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gbu-pJ-udi"/>
+                            <constraint firstItem="12x-O1-cDx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NhW-gP-y3r"/>
                             <constraint firstItem="VvZ-yn-isK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="a1p-se-s0v"/>
                             <constraint firstItem="VvZ-yn-isK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ffl-tP-hua"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="VvZ-yn-isK" id="bbP-AP-wMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,6 +78,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Screen Shot 2020-06-26 at 2.03.43 PM" width="111.66666412353516" height="71.333335876464844"/>
         <image name="backgroundImage" width="2396" height="1500"/>
+        <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
