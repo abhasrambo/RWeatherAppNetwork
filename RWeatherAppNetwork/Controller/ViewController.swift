@@ -12,6 +12,8 @@ class ViewController: UIViewController, UISearchTextFieldDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let weatherManager = WeatherManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,6 +22,10 @@ class ViewController: UIViewController, UISearchTextFieldDelegate {
     @IBAction func searchButton(_ sender: UIButton) {
         searchBar.endEditing(true)
         print(searchBar.text!)
+        if let city = searchBar.text {
+           weatherManager.urlString(city)
+        }
+
         
     }
     
