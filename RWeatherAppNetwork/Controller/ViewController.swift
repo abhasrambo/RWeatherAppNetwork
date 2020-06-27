@@ -8,20 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UISearchTextFieldDelegate {
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func searchButton(_ sender: UIButton) {
+        searchBar.endEditing(true)
+        print(searchBar.text!)
         
-        //searchBar.text
     }
     
+     
     
 }
 
