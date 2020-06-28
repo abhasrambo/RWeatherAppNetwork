@@ -16,7 +16,6 @@ class ViewController: UIViewController, UISearchTextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
